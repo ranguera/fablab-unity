@@ -1,0 +1,231 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta35.5.dtd" >
+   <PATCH nodename="D:\projects\0shit\fablab.v4p" systemname="fablab" filename="D:\projects\0shit\fablab.v4p" scrollx="0" scrolly="0">
+   <BOUNDS type="Window" left="16515" top="0" width="12495" height="11280">
+   </BOUNDS>
+   <NODE nodename="MidiNote (Devices)" componentmode="Hidden" id="74" systemname="MidiNote (Devices)">
+   <BOUNDS type="Node" left="4590" top="1950" width="2850" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4585" top="1940" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   <PIN pinname="Note" visible="1" slicecount="4" values="60,61,62,63">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Buffer Length" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="On Data" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Enumerations)" componentmode="InABox" id="73" systemname="IOBox (Enumerations)">
+   <BOUNDS type="Node" left="7365" top="1485" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7365" top="1485" width="1710" height="240">
+   </BOUNDS>
+   <PIN pinname="Input Enum" slicecount="1" values="MPKmini2">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="73" srcpinname="Output Enum" dstnodeid="74" dstpinname="Midi Input Port">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="72" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Node" left="4575" top="555" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4575" top="555" width="360" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Descriptive Name" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="72" srcpinname="Y Output Value" dstnodeid="74" dstpinname="Channel">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="69" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4590" top="2715" width="2355" height="2190">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4590" top="2715" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Columns" slicecount="1" values="5">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="74" srcpinname="Output" dstnodeid="69" dstpinname="Y Input Value">
+   </LINK>
+   <NODE systemname="I (Spreads)" nodename="I (Spreads)" componentmode="Hidden" id="78">
+   <BOUNDS type="Node" left="5280" top="1320" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="[ From .." slicecount="1" values="48">
+   </PIN>
+   <PIN pinname=".. To [" slicecount="1" values="73">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="78" srcpinname="Output" dstnodeid="74" dstpinname="Note">
+   </LINK>
+   <NODE systemname="MidiShort (Devices)" nodename="MidiShort (Devices)" componentmode="Hidden" id="97">
+   <BOUNDS type="Node" left="3135" top="165" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Message" visible="1">
+   </PIN>
+   <PIN pinname="Data 1" visible="1">
+   </PIN>
+   <PIN pinname="Data 2" visible="1">
+   </PIN>
+   <PIN pinname="On Data" visible="1">
+   </PIN>
+   <PIN pinname="Midi Input Port" slicecount="1" values="MPKmini2">
+   </PIN>
+   <PIN pinname="Enabled" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Buffer Length" slicecount="1" values="5">
+   </PIN>
+   </NODE>
+   <NODE systemname="MidiShortOut (Devices)" nodename="MidiShortOut (Devices)" componentmode="Hidden" id="98">
+   <BOUNDS type="Node" left="2940" top="990" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Message" visible="1">
+   </PIN>
+   <PIN pinname="Data1" visible="1">
+   </PIN>
+   <PIN pinname="Data2" visible="1">
+   </PIN>
+   <PIN pinname="Do Send" visible="1">
+   </PIN>
+   <PIN pinname="Midi Output Port" slicecount="1" values="|LoopBe Internal MIDI|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="97" srcpinname="Message" dstnodeid="98" dstpinname="Message">
+   </LINK>
+   <LINK srcnodeid="97" srcpinname="Data 1" dstnodeid="98" dstpinname="Data1">
+   </LINK>
+   <LINK srcnodeid="97" srcpinname="Data 2" dstnodeid="98" dstpinname="Data2">
+   </LINK>
+   <LINK srcnodeid="97" srcpinname="On Data" dstnodeid="98" dstpinname="Do Send">
+   </LINK>
+   <NODE systemname="OSCEncoder (Network)" nodename="OSCEncoder (Network)" componentmode="Hidden" id="147">
+   <BOUNDS type="Node" left="3525" top="7500" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Address" visible="1">
+   </PIN>
+   <PIN pinname="Type Tags" visible="1">
+   </PIN>
+   <PIN pinname="Arguments" visible="1">
+   </PIN>
+   <PIN pinname="OSCMessage" visible="1">
+   </PIN>
+   <PIN pinname="Spread as Bundle" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="148">
+   <BOUNDS type="Node" left="3540" top="6765" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3540" top="6765" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="note">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="148" srcpinname="Output String" dstnodeid="147" dstpinname="Address">
+   </LINK>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="149">
+   <BOUNDS type="Node" left="3840" top="7095" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3840" top="7095" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="s">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="149" srcpinname="Output String" dstnodeid="147" dstpinname="Type Tags">
+   </LINK>
+   <NODE systemname="AsString (Value)" nodename="AsString (Value)" componentmode="Hidden" id="150">
+   <BOUNDS type="Node" left="4755" top="5055" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="UDP (Network Client)" nodename="UDP (Network Client)" componentmode="Hidden" id="151">
+   <BOUNDS type="Node" left="3720" top="8790" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Do Send" visible="1">
+   </PIN>
+   <PIN pinname="Remote Port" visible="1" slicecount="1" values="4444">
+   </PIN>
+   <PIN pinname="Remote Host" slicecount="1" values="127.0.0.1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="147" srcpinname="OSCMessage" dstnodeid="151" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Change (String)" nodename="Change (String)" componentmode="Hidden" id="153">
+   <BOUNDS type="Node" left="3870" top="8025" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="OnChange" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="150" srcpinname="Output" dstnodeid="153" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="153" srcpinname="OnChange" dstnodeid="151" dstpinname="Do Send">
+   </LINK>
+   <NODE componentmode="InABox" id="155" nodename="IOBOX (VALUE ADVANCED)" systemname="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="4260" top="8430" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="160" left="9135" top="7740" type="Window" width="215">
+   </BOUNDS>
+   <BOUNDS height="240" left="4260" top="8430" type="Box" width="570">
+   </BOUNDS>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="9000">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="99999">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="155" srcpinname="Y Output Value" dstnodeid="151" dstpinname="Remote Port">
+   </LINK>
+   <LINK srcnodeid="69" srcpinname="Y Output Value" dstnodeid="150" dstpinname="Input">
+   </LINK>
+   <NODE systemname="Add (String Spectral)" nodename="Add (String Spectral)" componentmode="Hidden" id="162">
+   <BOUNDS type="Node" left="4740" top="6120" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Intersperse" slicecount="1" values="Semicolon">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="150" srcpinname="Output" dstnodeid="162" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="162" srcpinname="Output" dstnodeid="147" dstpinname="Arguments">
+   </LINK>
+   </PATCH>
